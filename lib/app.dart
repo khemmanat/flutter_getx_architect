@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_architect/modules/home/home_binding.dart';
+import 'package:flutter_getx_architect/modules/home/home_page.dart';
+import 'package:flutter_getx_architect/routes/app_pages.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -17,11 +20,14 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           builder: (context, _) {
             return GetMaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'Flutter GetX Architecture',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
               ),
-              home: Container(),
+              home: HomePage(),
+              initialBinding: HomeBinding(),
+              getPages: AppPages.pages,
             );
           }),
     );
